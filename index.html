@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ARSLANCYAN — Digital Artist, Illustrator & Animator.">
+<title>ARSLANCYAN — Digital Artist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111113;--muted:#59595e;--white:#fffdf7;--accent:#c9ff32;--pink:#ff72c6;--orange:#ff9b45;--blue:#63d9ff;--line:rgba(17,17,19,.13)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:#f5f1e7;line-height:1.5;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 8% 8%,rgba(255,114,198,.34),transparent 25%),radial-gradient(circle at 92% 16%,rgba(99,217,255,.34),transparent 27%),radial-gradient(circle at 15% 85%,rgba(201,255,50,.35),transparent 25%),radial-gradient(circle at 88% 82%,rgba(255,155,69,.30),transparent 27%),#f5f1e7}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.14;background-image:url("images/site-background.jpg");background-size:cover;background-position:center;background-attachment:fixed;filter:saturate(1.15)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,253,247,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.05em;font-size:21px}
+.navlinks{display:flex;gap:28px;color:#555;font-size:14px;font-weight:600}
+.navlinks a:hover{color:#111}
+.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center;padding:70px 0}
+.eyebrow{color:#6a7800;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
+h1{font-family:"Space Grotesk";font-size:clamp(54px,8vw,100px);line-height:.9;letter-spacing:-.07em;max-width:800px}
+.hero p{max-width:580px;color:#4d4d52;margin:30px 0;font-size:18px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border:1px solid #222;border-radius:999px;font-weight:700;font-size:14px;background:rgba(255,255,255,.35)}
+.btn.primary{background:#111;color:#fff;border-color:#111}
+.hero-art{aspect-ratio:1/1;border-radius:28px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#ffb35e,#ff72c6 48%,#63d9ff);box-shadow:18px 18px 0 rgba(17,17,19,.08)}
+.hero-art img{width:100%;height:100%;object-fit:cover}
+.hero-placeholder{font-family:"Space Grotesk";font-size:clamp(28px,5vw,55px);font-weight:700;text-align:center;padding:30px}
+section{padding:105px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:34px;gap:30px}
+.section-head h2{font-family:"Space Grotesk";font-size:clamp(36px,5vw,62px);letter-spacing:-.055em;line-height:1}
+.section-head p{color:var(--muted);max-width:440px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter{border:1px solid var(--line);background:rgba(255,255,255,.35);color:#555;padding:9px 14px;border-radius:999px;cursor:pointer;font-weight:600}
+.filter.active,.filter:hover{background:#111;color:#fff;border-color:#111}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.work{aspect-ratio:1/1;background:#eee;border:1px solid var(--line);border-radius:17px;overflow:hidden;position:relative;box-shadow:0 8px 20px rgba(17,17,19,.05)}
+.work img,.media video{width:100%;height:100%;object-fit:cover;display:block}
+.placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ff9b45,#ff72c6 50%,#63d9ff);font-family:"Space Grotesk";font-size:22px;font-weight:700}
+.info{position:absolute;inset:auto 0 0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.82));color:white;opacity:0;transition:.25s}
+.work:hover .info{opacity:1}.info small{color:#ddd}
+.nft-btn{display:inline-flex;margin-top:9px;padding:7px 11px;border-radius:999px;background:#fff;color:#111;font-size:12px;font-weight:700}
+.nft-btn:hover{background:var(--accent)}
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.media{aspect-ratio:16/10;border-radius:17px;overflow:hidden;border:1px solid var(--line);background:#111;position:relative}
+.media-label{position:absolute;left:14px;bottom:12px;z-index:2;color:#fff;font-weight:700;text-shadow:0 2px 12px #000}
+.gif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.gif{aspect-ratio:1/1;border-radius:17px;overflow:hidden;border:1px solid var(--line);background:#ddd}
+.gif img{width:100%;height:100%;object-fit:cover}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.about h3{font-family:"Space Grotesk";font-size:34px;letter-spacing:-.04em}
+.about p{color:#555;font-size:17px;margin-bottom:18px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:35px}
+.service{padding:26px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.42)}
+.service h4{font-size:18px;margin-bottom:8px}.service p{font-size:14px;color:#777;margin:0}
+.more-intro{margin-bottom:28px;color:#666;max-width:650px}
+.more-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.more-grid .thumb{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#ddd}
+.more-grid img{width:100%;height:100%;object-fit:cover}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end}
+.contact h2{font-family:"Space Grotesk";font-size:clamp(42px,6vw,78px);letter-spacing:-.06em;line-height:.95}
+.contact p{color:#666;margin-top:20px;max-width:500px}
+.contact-links{display:flex;flex-direction:column;gap:0}
+.contact-links a{border-bottom:1px solid var(--line);padding:15px 0;color:#444;font-weight:600}
+.contact-links a:hover{color:#6a7800}
+footer{padding:30px 0;color:#777;font-size:13px;display:flex;justify-content:space-between}
+.note{color:#777;font-size:13px;margin-top:15px}
+@media(max-width:800px){.navlinks{gap:14px}.navlinks a:nth-child(2){display:none}.hero,.about,.contact{grid-template-columns:1fr;gap:35px}.hero{padding:60px 0}.hero-art{max-width:600px}.grid,.media-grid{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:1fr}.more-grid{grid-template-columns:repeat(4,1fr)}section{padding:80px 0}}
+@media(max-width:500px){.wrap{width:min(100% - 24px,1180px)}.navlinks a:nth-child(3){display:none}.grid,.media-grid{gap:8px}.work,.media,.gif{border-radius:10px}.section-head{display:block}.section-head p{margin-top:15px}.more-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#">ARSLANCYAN</a>
+<div class="navlinks"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</nav></div></header>
+
+<main>
+<section class="hero wrap" style="border-top:0">
+<div>
+<div class="eyebrow">Digital Artist · Illustrator · Animator</div>
+<h1>WHERE IDEAS<br>COME TO LIFE.</h1>
+<p>I create digital illustrations, character art, memes and animation, blending creativity, humor and visual storytelling into memorable artwork.</p>
+<div class="buttons"><a class="btn primary" href="#work">View my work ↓</a><a class="btn" href="#contact">Open for commission</a></div>
+</div>
+<div class="hero-art"><img src="images/hero.jpg" alt="ARSLANCYAN artwork" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;hero-placeholder&quot;>YOUR<br>ARTWORK</div>'"></div>
+</section>
+
+<section id="work"><div class="wrap">
+<div class="section-head"><h2>Selected Art</h2><p>Six featured artworks from my collection. Replace these placeholders with your own artwork.</p></div>
+<div class="grid">
+<article class="work">
+<div class="placeholder"><img src="images/art-1.jpg" alt="Featured artwork 1" onerror="this.style.display='none';this.parentElement.innerHTML='ART 01'"></div>
+<div class="info"><strong>Artwork 01</strong><br><small>Digital Art · NFT</small><br>
+<a class="nft-btn" href="https://opensea.io/collection/cyan-studio" target="_blank" rel="noopener">Buy NFT ↗</a></div>
+</article>
+<article class="work">
+<div class="placeholder"><img src="images/art-2.jpg" alt="Featured artwork 2" onerror="this.style.display='none';this.parentElement.innerHTML='ART 02'"></div>
+<div class="info"><strong>Artwork 02</strong><br><small>Digital Art · NFT</small><br>
+<a class="nft-btn" href="https://opensea.io/collection/cyan-studio" target="_blank" rel="noopener">Buy NFT ↗</a></div>
+</article>
+<article class="work">
+<div class="placeholder"><img src="images/art-3.jpg" alt="Featured artwork 3" onerror="this.style.display='none';this.parentElement.innerHTML='ART 03'"></div>
+<div class="info"><strong>Artwork 03</strong><br><small>Digital Art · NFT</small><br>
+<a class="nft-btn" href="https://opensea.io/collection/cyan-studio" target="_blank" rel="noopener">Buy NFT ↗</a></div>
+</article>
+<article class="work">
+<div class="placeholder"><img src="images/art-4.jpg" alt="Featured artwork 4" onerror="this.style.display='none';this.parentElement.innerHTML='ART 04'"></div>
+<div class="info"><strong>Artwork 04</strong><br><small>Digital Art · NFT</small><br>
+<a class="nft-btn" href="https://opensea.io/collection/cyan-studio" target="_blank" rel="noopener">Buy NFT ↗</a></div>
+</article>
+<article class="work">
+<div class="placeholder"><img src="images/art-5.jpg" alt="Featured artwork 5" onerror="this.style.display='none';this.parentElement.innerHTML='ART 05'"></div>
+<div class="info"><strong>Artwork 05</strong><br><small>Digital Art · NFT</small><br>
+<a class="nft-btn" href="https://opensea.io/collection/cyan-studio" target="_blank" rel="noopener">Buy NFT ↗</a></div>
+</article>
+<article class="work">
+<div class="placeholder"><img src="images/art-6.jpg" alt="Featured artwork 6" onerror="this.style.display='none';this.parentElement.innerHTML='ART 06'"></div>
+<div class="info"><strong>Artwork 06</strong><br><small>Digital Art · NFT</small><br>
+<a class="nft-btn" href="https://opensea.io/collection/cyan-studio" target="_blank" rel="noopener">Buy NFT ↗</a></div>
+</article>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="section-head"><h2>Timelapse</h2><p>Watch selected artworks come to life from sketch to finished illustration.</p></div>
+<div class="media-grid">
+<div class="media"><video controls preload="metadata" poster="images/timelapse-1.jpg"><source src="videos/timelapse-1.mp4" type="video/mp4"></video><span class="media-label">Timelapse 01</span></div>
+<div class="media"><video controls preload="metadata" poster="images/timelapse-2.jpg"><source src="videos/timelapse-2.mp4" type="video/mp4"></video><span class="media-label">Timelapse 02</span></div>
+<div class="media"><video controls preload="metadata" poster="images/timelapse-3.jpg"><source src="videos/timelapse-3.mp4" type="video/mp4"></video><span class="media-label">Timelapse 03</span></div>
+</div>
+<p class="note">Put your 3 MP4 timelapse files inside the <b>videos</b> folder.</p>
+</div></section>
+
+<section><div class="wrap">
+<div class="section-head"><h2>GIF & Motion</h2><p>Short loops, animated memes and motion experiments.</p></div>
+<div class="gif-grid">
+<div class="gif"><img src="images/gif-1.gif" alt="Animated GIF 1"></div>
+<div class="gif"><img src="images/gif-2.gif" alt="Animated GIF 2"></div>
+<div class="gif"><img src="images/gif-3.gif" alt="Animated GIF 3"></div>
+</div>
+<p class="note">Add or remove GIFs in the <b>images</b> folder as needed.</p>
+</div></section>
+
+<section id="more-art"><div class="wrap">
+<div class="section-head"><h2>More Art</h2><p>Explore more of my previous work, experiments and illustrations.</p></div>
+<p class="more-intro">This section is designed for your larger archive — around 50–100 artworks or more. Add images to the gallery and let the collection grow over time.</p>
+<div class="more-grid">
+<div class="thumb"><img src="images/more-1.jpg" alt="More artwork 1"></div><div class="thumb"><img src="images/more-2.jpg" alt="More artwork 2"></div><div class="thumb"><img src="images/more-3.jpg" alt="More artwork 3"></div><div class="thumb"><img src="images/more-4.jpg" alt="More artwork 4"></div><div class="thumb"><img src="images/more-5.jpg" alt="More artwork 5"></div><div class="thumb"><img src="images/more-6.jpg" alt="More artwork 6"></div><div class="thumb"><img src="images/more-7.jpg" alt="More artwork 7"></div><div class="thumb"><img src="images/more-8.jpg" alt="More artwork 8"></div><div class="thumb"><img src="images/more-9.jpg" alt="More artwork 9"></div><div class="thumb"><img src="images/more-10.jpg" alt="More artwork 10"></div><div class="thumb"><img src="images/more-11.jpg" alt="More artwork 11"></div><div class="thumb"><img src="images/more-12.jpg" alt="More artwork 12"></div><div class="thumb"><img src="images/more-13.jpg" alt="More artwork 13"></div><div class="thumb"><img src="images/more-14.jpg" alt="More artwork 14"></div><div class="thumb"><img src="images/more-15.jpg" alt="More artwork 15"></div><div class="thumb"><img src="images/more-16.jpg" alt="More artwork 16"></div><div class="thumb"><img src="images/more-17.jpg" alt="More artwork 17"></div><div class="thumb"><img src="images/more-18.jpg" alt="More artwork 18"></div><div class="thumb"><img src="images/more-19.jpg" alt="More artwork 19"></div><div class="thumb"><img src="images/more-20.jpg" alt="More artwork 20"></div><div class="thumb"><img src="images/more-21.jpg" alt="More artwork 21"></div><div class="thumb"><img src="images/more-22.jpg" alt="More artwork 22"></div><div class="thumb"><img src="images/more-23.jpg" alt="More artwork 23"></div><div class="thumb"><img src="images/more-24.jpg" alt="More artwork 24"></div><div class="thumb"><img src="images/more-25.jpg" alt="More artwork 25"></div><div class="thumb"><img src="images/more-26.jpg" alt="More artwork 26"></div><div class="thumb"><img src="images/more-27.jpg" alt="More artwork 27"></div><div class="thumb"><img src="images/more-28.jpg" alt="More artwork 28"></div><div class="thumb"><img src="images/more-29.jpg" alt="More artwork 29"></div><div class="thumb"><img src="images/more-30.jpg" alt="More artwork 30"></div>
+</div>
+<p class="note">The gallery currently has 30 slots. Duplicate the thumbnail line in <b>index.html</b> when you want 50–100+ artworks.</p>
+</div></section>
+
+<section id="about"><div class="wrap about">
+<div><div class="eyebrow">About</div><h3>Digital art, characters & visual storytelling.</h3></div>
+<div>
+<p>I'm ARSLANCYAN, a digital artist creating illustrations, character art, memes and animation for online communities, brands and independent projects.</p>
+<p>My work combines expressive characters, clean line art, humor and bold color to create visuals that are easy to recognize and fun to remember.</p>
+<div class="services">
+<div class="service"><h4>Illustration</h4><p>Custom digital artwork, posters and visual concepts.</p></div>
+<div class="service"><h4>Character Art</h4><p>Character design, PFPs, expressions and meme art.</p></div>
+<div class="service"><h4>Animation</h4><p>Short animations, GIFs and social media visuals.</p></div>
+</div></div></div></section>
+
+<section id="contact"><div class="wrap contact">
+<div><div class="eyebrow">Let's work together</div><h2>HAVE A<br>PROJECT?</h2><p>I'm open for commissions, collaborations and creative projects.</p></div>
+<div class="contact-links">
+<a href="https://t.me/arslancyan" target="_blank" rel="noopener">Telegram ↗</a>
+<a href="https://opensea.io/arslancyan" target="_blank" rel="noopener">OpenSea ↗</a>
+<a href="https://x.com/arslancyan" target="_blank" rel="noopener">X / Twitter ↗</a>
+</div></div></section>
+</main>
+<footer class="wrap"><span>© 2026 ARSLANCYAN</span><span>Digital Artist</span></footer>
+</body>
+</html>
